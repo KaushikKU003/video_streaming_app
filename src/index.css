@@ -12,10 +12,28 @@ code {
     monospace;
 }
 
+
 .custom-scroll::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari */
 }
 
 .custom-scroll {
   scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.video-card {
+  transition: transform 0.1s ease-in-out;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+}
+
+.navbar .btn.active {
+  background-color: #505050 !important; /* Slightly different background */
+  border-radius: 8px;
+}
+
+.body{
+  background-color: black;
 }

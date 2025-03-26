@@ -6,6 +6,8 @@ import Layout from "./components/Layout";
 import Gaming from "./components/Gaming";
 import Technology from "./components/Technology";
 import VideoDetails from "./components/VideoDetails";
+import SearchResults from "./components/SearchResults";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="gaming" element={<Gaming />} />
           <Route path="technology" element={<Technology />} />
           <Route path="/video/:videoId" element={<VideoDetails />} />
+          <Route path="/result" element={<SearchResults />} />
         </Route>
       </Routes>
     </BrowserRouter>

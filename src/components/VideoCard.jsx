@@ -13,8 +13,8 @@ const VideoCard = ({ video }) => {
   };
   
   return (
-    <div className="card d-flex flex-column"
-         style={{ width: "100%", maxWidth: "26rem", minHeight: "350px", margin: "1rem", background: "black", color: "white", overflow: "hidden" }}>
+    <div className="card d-flex flex-column video-card border-0"
+         style={{ width: "100%", maxWidth: "26rem", minHeight: "350px", margin: "1rem", overflow: "hidden",color:"inherit" ,backgroundColor:"inherit" }}>
 
       {/* Thumbnail Section */}
       <div className="position-relative">
@@ -26,7 +26,7 @@ const VideoCard = ({ video }) => {
         />
         
         {/* Video Duration - Bottom Right Corner */}
-        <span className="position-absolute bottom-0 end-0 m-2 px-2 py-1 bg-dark text-white rounded"
+        <span className="position-absolute bottom-0 end-0 m-2 px-2 py-1 rounded"
               style={{ fontSize: "0.8rem", opacity: 0.8 }}>
           {video.duration}
         </span>

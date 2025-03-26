@@ -2,15 +2,18 @@ import { useLocation } from "react-router-dom";
 import VideoPlayer from "../components/VideoPlayer";
 import CommentsSection from "../components/CommentsSection";
 import RelatedVideos from "../components/RelatedVideos";
+import { useTheme } from "../context/ThemeContext";
 
 function VideoDetails() {
   const location = useLocation();
+  const {theme}=useTheme()
   const video = location.state?.video; // Get video from state
+  
 
   if (!video) return <h1 className="text-center mt-5">Video not found</h1>; // Handle missing state
     
   return (
-    <div className="container mt-4">
+    <div className={`container mt-4 ${theme==="dark"?"text-white" : "bg-white text-dark"} `}>
       <div className="row">
         {/* Left Section: Video & Comments */}
         <div
@@ -20,8 +23,8 @@ function VideoDetails() {
             overflowY: "auto",
           }}
         >
-          <VideoPlayer video={video} />
-          <CommentsSection comments={video.comments} />
+          <VideoPlayer video={video} theme={theme} />
+          <CommentsSection comments={video.comments} theme={theme}/>
         </div>
 
         {/* Right Section: Related Videos */}
@@ -32,7 +35,7 @@ function VideoDetails() {
             overflowY: "auto",
           }}
         >
-          <RelatedVideos currentVideoId={video.videoId} />
+          <RelatedVideos currentVideoId={video.videoId} theme={theme}/>
         </div>
       </div>
     </div>
