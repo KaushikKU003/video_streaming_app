@@ -22,7 +22,7 @@ function SearchResults() {
       {filteredVideos.length > 0 ? (
         filteredVideos.map((video) => (
           <Link
-            key={video.videoId}
+            key={video.id}
             to={`/video/${video.id}`}
             state={{ video }}
             className="text-decoration-none"
@@ -30,14 +30,29 @@ function SearchResults() {
           >
             <div className="row mb-3 p-3 rounded shadow-sm">
               {/* Video Thumbnail */}
-              <div className="col-12 col-lg-4">
+              <div className="col-12 col-lg-4 position-relative">
+                {/* Video Thumbnail */}
                 <img
                   src={video.thumbnailUrl}
                   className="rounded w-100"
                   alt={video.title}
                   style={{ height: "auto", objectFit: "cover" }}
                 />
+
+                {/* Duration Overlay */}
+                <span
+                  className="position-absolute me-4 bottom-0 end-0 bg-dark text-light px-2 py-1 rounded"
+                  style={{
+                    fontSize: "0.9rem",
+                    fontWeight: "bold",
+                    margin: "8px",
+                    opacity: 0.8,
+                  }}
+                >
+                  {video.duration} {/* Ensure duration is available in your data */}
+                </span>
               </div>
+
 
               {/* Video Details */}
               <div className="col-12 col-lg-8 mt-2 mt-lg-0">
