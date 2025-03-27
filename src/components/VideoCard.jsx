@@ -45,8 +45,8 @@ const VideoCard = ({ video }) => {
           {/* Video Info */}
           <div className="d-flex flex-column">
             <h5 className="card-title m-0">{video.title}</h5>
-            <p className="card-text text-light m-0">{video.author}</p>
-            <p className="card-text text-light m-0">{video.views} views • {getTimeAgo(video.uploadTime)}</p> 
+            <p className="card-text  m-0">{video.author}</p>
+            <p className="card-text  m-0">{video.views} views • {getTimeAgo(video.uploadTime)}</p> 
           </div>
         </div>
 
