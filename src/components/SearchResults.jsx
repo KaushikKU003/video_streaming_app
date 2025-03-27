@@ -43,7 +43,7 @@ function SearchResults() {
               <div className="col-12 col-lg-8 mt-2 mt-lg-0">
                 <h3 className="fw-bold">{video.title}</h3>
 
-                <p className="mb-1 text-muted" style={{ fontSize: "0.9rem" }}>
+                <p className="mb-1" style={{ fontSize: "0.9rem" }}>
                   {video.views} views • {getTimeAgo(video.uploadTime)}
                 </p>
 
