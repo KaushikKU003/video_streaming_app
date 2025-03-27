@@ -85,12 +85,12 @@ cd your-repo
 ```
 ###  2. Install Dependencies 
 ```sh
-npm run start
+npm run install
 ```
 
 ### 3. Start the Development Server
 ```sh
-npm run dev
+npm run start
 ```
 
 ### 4. Open your browser and visit 
