@@ -80,7 +80,7 @@ function SearchResults() {
           </Link>
         ))
       ) : (
-        <p className="text-light">No results found.</p>
+        <h1 className="d-flex justify-content-center align-items-center" style={{ height: "72vh", width: "100%" }}>No videos Exists.</h1>
       )}
     </div>
   );
