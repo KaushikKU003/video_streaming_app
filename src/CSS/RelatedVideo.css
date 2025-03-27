@@ -1,0 +1,42 @@
+/* Default (XL and above - Keep as it is now) */
+.related-video-thumbnail {
+    width: 160px;
+    height: 90px;
+  }
+  
+  /* Reduce size for LG (992px and below) */
+  @media (max-width: 992px) {
+    .related-video-thumbnail {
+      width: 120px;
+      height: 68px;
+    }
+    
+    .related-video-details {
+      font-size: 14px; /* Reduce text size */
+    }
+  
+    .related-video-title {
+      font-size: 16px;
+    }
+  
+    .related-video-author, .related-video-stats {
+      font-size: 12px;
+    }
+  }
+  
+  /* Reduce size further for MD (768px and below) */
+  @media (max-width: 768px) {
+    .related-video-thumbnail {
+      width: 100px;
+      height: 56px;
+    }
+  
+    .related-video-title {
+      font-size: 14px;
+    }
+  
+    .related-video-author, .related-video-stats {
+      font-size: 11px;
+    }
+  }
+  

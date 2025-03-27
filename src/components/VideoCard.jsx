@@ -7,8 +7,6 @@ const VideoCard = ({ video }) => {
 
   const navigate=useNavigate();
   const handleClick = () => {
-    // console.log("Video clicked:", video.id);
-    // console.log(video.likes);
     navigate(`/video/${video.id}`, { state: { video } }); // Navigate and pass video data
   };
   
@@ -27,7 +25,7 @@ const VideoCard = ({ video }) => {
         
         {/* Video Duration - Bottom Right Corner */}
         <span className="position-absolute bottom-0 end-0 m-2 px-2 py-1 rounded"
-              style={{ fontSize: "0.8rem", opacity: 0.8 }}>
+              style={{ fontSize: "0.8rem", opacity: 0.8 ,backgroundColor:"#000000" ,color:"white"}}>
           {video.duration}
         </span>
       </div>

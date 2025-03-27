@@ -22,22 +22,22 @@ function SearchResults() {
       {filteredVideos.length > 0 ? (
         filteredVideos.map((video) => (
           <Link key={video.videoId} to={`/video/${video.id}`} state={{ video }} className="text-decoration-none" style={{ color: "inherit" }}>
-            <div className="d-flex mb-3 p-3 rounded shadow-sm">
+            <div className="d-flex flex-lg-row flex-column mb-3 p-3 rounded shadow-sm">
               {/* Video Thumbnail */}
               <img
                 src={video.thumbnailUrl}
                 className="rounded"
                 alt={video.title}
-                style={{ width: "35%", height: "10%", objectFit: "cover" }}
+                style={{ width: "100%", height: "auto", objectFit: "cover" }} // Full width on small screens
               />
 
               {/* Video Details */}
-              <div className="ms-3">
+              <div className="mt-2 mt-lg-0 ms-lg-3"> {/* Add margin only for lg+ */}
                 {/* Title */}
                 <h3 className="fw-bold">{video.title}</h3>
 
                 {/* Views & Uploaded Time */}
-                <p className=" mb-1" style={{ fontSize: "0.9rem" }}>
+                <p className="mb-1" style={{ fontSize: "0.9rem" }}>
                   {video.views} views • {getTimeAgo(video.uploadTime)}
                 </p>
 
@@ -58,6 +58,7 @@ function SearchResults() {
                 </p>
               </div>
             </div>
+
           </Link>
         ))
       ) : (

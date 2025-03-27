@@ -3,6 +3,7 @@ import VideoPlayer from "../components/VideoPlayer";
 import CommentsSection from "../components/CommentsSection";
 import RelatedVideos from "../components/RelatedVideos";
 import { useTheme } from "../context/ThemeContext";
+import "../CSS/VideoDetails.css";
 
 function VideoDetails() {
   const location = useLocation();
@@ -13,7 +14,7 @@ function VideoDetails() {
   if (!video) return <h1 className="text-center mt-5">Video not found</h1>; // Handle missing state
     
   return (
-    <div className={`container mt-4 ${theme==="dark"?"text-white" : "bg-white text-dark"} `}>
+    <div className={`container-fluid mt-4 ${theme==="dark"?"text-white" : "bg-white text-dark"} `}>
       <div className="row">
         {/* Left Section: Video & Comments */}
         <div

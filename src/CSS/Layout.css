@@ -1,0 +1,79 @@
+@media (max-width: 584px) {
+    /* Navbar */
+    .navbar .navbar-brand img {
+      height: 1.2rem !important;
+    }
+  
+    .navbar form {
+      max-width: 10rem !important;
+    }
+  
+    .navbar form input {
+      font-size: 0.7rem !important;
+      padding: 0.15rem 0.4rem !important;
+    }
+  
+    .navbar form button {
+      padding: 0.15rem 0.4rem !important;
+      font-size: 0.7rem !important;
+    }
+  
+    .navbar .btn-light, .navbar .btn-dark {
+      padding: 0.25rem !important;
+      font-size: 0.8rem !important;
+    }
+  
+    .navbar img[alt="Profile"] {
+      width: 25px !important;
+      height: 25px !important;
+    }
+  }
+  
+  @media (max-width: 394px) {
+    .navbar {
+      flex-wrap: nowrap !important; /* Prevents wrapping */
+      justify-content: space-between !important;
+    }
+  
+    .navbar .navbar-collapse {
+      flex-grow: 0 !important;
+    }
+  
+    .navbar .navbar-brand img {
+      height: 1.2rem !important;
+    }
+  
+    .navbar form {
+      max-width: 8rem !important; /* Even smaller search bar */
+    }
+  
+    .navbar form input {
+      font-size: 0.65rem !important;
+      padding: 0.1rem 0.3rem !important;
+    }
+  
+    .navbar form button {
+      padding: 0.1rem 0.3rem !important;
+      font-size: 0.65rem !important;
+    }
+  
+    .navbar .btn-light, .navbar .btn-dark {
+      padding: 0.2rem !important;
+      font-size: 0.75rem !important;
+    }
+  
+    .navbar img[alt="Profile"] {
+      width: 22px !important;
+      height: 22px !important;
+    }
+  }
+  
+/* sidebar */
+@media (max-width: 375px) {
+    .sidebar {
+      height: 100vh !important; 
+      min-height: 100vh !important;
+    }
+  }
+  
+  

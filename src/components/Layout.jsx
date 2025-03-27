@@ -6,7 +6,7 @@
   import Youtube_light from "../assets/utube_light.png";
   import Youtube__dark from "../assets/utube_dark.png"
   import { MdDarkMode,MdLightMode } from "react-icons/md";
-
+  import "../CSS/Layout.css"
 
   import { useTheme } from "../context/ThemeContext";
 
@@ -49,29 +49,34 @@
               <IoSearch size={20} />
             </button>
           </form>
-          {/* Toggle Theme Button */}
-        <button className="btn btn-light" onClick={toggleTheme}>
-          Change theme :{theme === "light" ? <MdDarkMode size={24}/> : <MdLightMode size={24}/>}
-        </button>
+          {/* Right: Theme Toggle & User Profile */}
+          <div className="d-flex align-items-center gap-3">
+            <button className="btn btn-light" onClick={toggleTheme}>
+              {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
+            </button>
 
-          {/* Right: User Profile */}
-          <div className="d-flex align-items-center">
-            <img src="https://shorturl.at/hqSen" alt="Profile" className="rounded-circle" 
-                style={{ width: "40px", height: "40px", objectFit: "cover" }} />
+            <img
+              src="https://shorturl.at/hqSen"
+              alt="Profile"
+              className="rounded-circle"
+              style={{ width: "40px", height: "40px", objectFit: "cover" }}
+            />
           </div>
+
           
         </div>
       </nav>
 
         {/* Sidebar */}
-        <div className={`p-3 d-flex flex-column align-items-center position-fixed start-0 ${theme === "dark" ? "bg-dark text-white" : "bg-light text-dark"}`}
-            style={{ 
-              width: collapsed ? "60px" : "200px", 
-              transition: "width 0.3s", 
-              height: "calc(100vh - 60px)", // Adjust height so it doesn't overlap with navbar
-              top: "60px", // Moves sidebar below navbar
-              zIndex: "1000"
-            }}>
+        <div className={`sidebar p-3 d-flex flex-column align-items-center position-fixed start-0 ${theme === "dark" ? "bg-dark text-white" : "bg-light text-dark"}`}
+          style={{ 
+            width: collapsed ? "60px" : window.innerWidth < 611 ? "150px" : "200px", 
+            transition: "width 0.3s", 
+            height: "100vh", // Ensure full viewport height
+            minHeight: "100vh", // Prevent height shrinking issue
+            top: "60px", // Moves sidebar below navbar
+            zIndex: "1000"
+          }}>
           <NavLink
             to="/"
             className={`btn ${theme === "dark" ? "btn-dark text-white" : "btn-light text-dark"} d-flex align-items-center my-4`}
@@ -108,9 +113,11 @@
               background: theme === "dark" ? "black" : "white", 
               color: theme === "dark" ? "white" : "black",
               marginTop: "60px", // Push content below navbar
-              marginLeft: collapsed ? "60px" : "200px", // Push content beside sidebar
+              marginLeft: window.innerWidth <= 610 ? (collapsed ? "60px" : "150px") : (collapsed ? "60px" : "200px"),
               transition: "margin-left 0.3s",
-              padding: "20px"
+              padding: "20px",
+              maxWidth:"100vw",
+              overflowX: "hidden"
             }}>
           <Outlet />
         </div>
@@ -118,4 +125,4 @@
     );
   }
 
-  export default Layout;
+export default Layout;

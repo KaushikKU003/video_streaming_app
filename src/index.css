@@ -13,13 +13,39 @@ code {
 }
 
 
-.custom-scroll::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari */
+/* .custom-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .custom-scroll {
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+} */
+/* Default: Keep separate scrollbars on large screens */
+.custom-scroll {
+  height: 85vh;
+  overflow-y: auto;
 }
+
+/* On small screens, disable individual scrolls and enable a single scroll for the whole container */
+@media (max-width: 768px) {
+  .container {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .row {
+    height: auto;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-scroll {
+    height: auto !important;
+    overflow-y: visible !important;
+  }
+}
+
 
 .video-card {
   transition: transform 0.1s ease-in-out;

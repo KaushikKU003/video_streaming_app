@@ -42,36 +42,70 @@ const VideoPlayer = ({ video ,theme}) => {
       {/* Video Details */}
       <h4 className="mt-3">{video.title}</h4>
       
-      {/* Channel Info & Actions */}
-      <div className="d-flex align-items-center justify-content-between mt-3">
-        <div className="d-flex align-items-center justify-content-between">
-          <img 
-            src={video.profileUrl} 
-            alt="Profile" 
-            className="rounded-circle me-2" 
-            style={{ width: "40px", height: "40px" }} 
-          />
-          <div className="me-3">
-            <h4 className=" d-block">{video.author}</h4>
-            <span className="small">{video.subscriber}</span>
-          </div>
-          <button  className="btn bg-danger text-white rounded-5">Subscribe</button>
-        </div>
-        
-        {/* Like, Dislike, Share, and Download Buttons */}
-        <div className="d-flex align-items-center gap-3">
-            <div className="rounded-5 d-flex" 
-            style={{backgroundColor:"#303030"}}>
-              <button className="btn text-white d-flex align-items-center" onClick={handleLike}> {likeStatus ? <BiSolidLike size={24} /> : <BiLike size={24} />}
-                  <span className="mx-1">{likeCount}</span> Likes
-              </button>
-                  <span className="d-flex align-items-center text-white">|</span>                
-              <button className="btn text-white" onClick={handleDislike}>{dislikeStatus ? <BiSolidDislike size={24} /> : <BiDislike size={24} />}</button>
-            </div>
-          <button  className="btn rounded-5 text-white" style={{backgroundColor:"#303030"}}><RiShareForwardLine size={24}/> Share</button>
-          <button className="btn rounded-5 text-white" style={{backgroundColor:"#303030"}}><MdOutlineDownload size={24}/> Download</button>
-        </div>
-      </div>
+     {/* Channel Info & Actions */}
+<div className="d-flex align-items-center justify-content-between mt-3 flex-wrap">
+  {/* Left: Channel Logo & Subscribe Button */}
+  <div className="d-flex align-items-center">
+    <img 
+      src={video.profileUrl} 
+      alt="Profile" 
+      className="rounded-circle me-2" 
+      style={{ width: "40px", height: "40px" }} 
+    />
+    <div className="me-2">
+      <h5 className="mb-0">{video.author}</h5>
+      <span className="small">{video.subscriber}</span>
+    </div>
+    
+    {/* Subscribe Button (Smaller on Mobile) */}
+    <button  
+      className="btn bg-danger text-white rounded-5 ms-2 btn-sm"  
+      style={{ fontSize: "14px", padding: "6px 12px" }}
+    >
+      Subscribe
+    </button>
+  </div>
+
+  {/* Right: Like, Dislike, Share, Download Buttons */}
+  <div className="d-flex align-items-center gap-2 flex-wrap">
+    <div 
+      className="rounded-5 d-flex flex-wrap align-items-center" 
+      style={{ backgroundColor: "#303030", maxWidth: "100%" }}
+    >
+      <button 
+        className="btn text-white d-flex align-items-center btn-sm" 
+        onClick={handleLike}
+        style={{ fontSize: "14px", padding: "5px 10px" }}
+      >
+        {likeStatus ? <BiSolidLike size={18} /> : <BiLike size={18} />}
+        <span className="mx-1">{likeCount}</span> Likes
+      </button>
+      <span className="text-white px-1">|</span>
+      <button 
+        className="btn text-white btn-sm" 
+        onClick={handleDislike}
+        style={{ fontSize: "14px", padding: "5px 10px" }}
+      >
+        {dislikeStatus ? <BiSolidDislike size={18} /> : <BiDislike size={18} />}
+      </button>
+    </div>
+
+    <button 
+      className="btn rounded-5 text-white btn-sm" 
+      style={{ backgroundColor: "#303030", fontSize: "14px", padding: "5px 10px" }}
+    >
+      <RiShareForwardLine size={18} /> Share
+    </button>
+
+    <button 
+      className="btn rounded-5 text-white btn-sm" 
+      style={{ backgroundColor: "#303030", fontSize: "14px", padding: "5px 10px" }}
+    >
+      <MdOutlineDownload size={18} /> Download
+    </button>
+  </div>
+</div>
+
 
       {/* Video Meta & Description */}
       <div className="mt-3 p-3 rounded" style={{ backgroundColor: theme === "dark" ? "#343434" : "#e0e0e0" }}>
