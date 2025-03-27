@@ -1,5 +1,4 @@
-const Videos=[
-    {
+    [{
         "id": "1",
         "title": "Big Buck Bunny",
         "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Big_Buck_Bunny_thumbnail_vlc.png/1200px-Big_Buck_Bunny_thumbnail_vlc.png",
@@ -791,7 +790,4 @@ const Videos=[
             "reply_count": 3
           }
         ]
-    } 
-]
-
-export default Videos
+    }]
