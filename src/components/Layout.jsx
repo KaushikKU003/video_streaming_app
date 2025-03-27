@@ -116,8 +116,7 @@
               marginLeft: window.innerWidth <= 610 ? (collapsed ? "60px" : "150px") : (collapsed ? "60px" : "200px"),
               transition: "margin-left 0.3s",
               padding: "20px",
-              maxWidth:"100vw",
-              overflowX: "hidden"
+              maxWidth:"100vw"
             }}>
           <Outlet />
         </div>
