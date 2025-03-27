@@ -80,7 +80,7 @@ Follow these steps to run the project locally on your system:
 ### 1. Clone the Repository  
 First, clone the repository to your local machine using Git:  
 ```sh
-git clone https://github.com/KaushikKU003/video_streaming_app
+git clone https://github.com/KaushikKU003/video_streaming_app.git
 cd your-repo
 ```
 ###  2. Install Dependencies 
