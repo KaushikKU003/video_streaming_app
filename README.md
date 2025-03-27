@@ -147,7 +147,7 @@ Run the following command to install all required dependencies:
 
 ```sh
 npm install bootstrap react-router-dom react-icons
-
+```
 
 ### JSON Structure  
 
