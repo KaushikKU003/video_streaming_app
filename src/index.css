@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:wght@700&family=Trade+Winds&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto Slab", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,41 +10,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-/* .custom-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.custom-scroll {
-  scrollbar-width: none; 
-} */
-/* Default: Keep separate scrollbars on large screens */
-.custom-scroll {
-  height: 85vh;
-  overflow-y: auto;
-}
-
-/* On small screens, disable individual scrolls and enable a single scroll for the whole container */
-@media (max-width: 768px) {
-  .container {
-    height: 100vh;
-    overflow-y: auto;
-  }
-
-  .row {
-    height: auto;
-    overflow-y: visible;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .custom-scroll {
-    height: auto !important;
-    overflow-y: visible !important;
-  }
-}
-
 
 .video-card {
   transition: transform 0.1s ease-in-out;
@@ -56,7 +20,7 @@ code {
 }
 
 .navbar .btn.active {
-  background-color: #505050 !important; /* Slightly different background */
+  background-color: #505050 !important;
   border-radius: 8px;
 }
 
