@@ -3,11 +3,10 @@
   import { FaHome,FaFire, FaBars } from "react-icons/fa";
   import {IoGameControllerOutline,IoSearch,IoMusicalNotesSharp} from "react-icons/io5"
   import { FaComputer } from "react-icons/fa6";
-  import Youtube_light from "../assets/utube_light.png";
-  import Youtube__dark from "../assets/utube_dark.png"
+  import Youtube_light from "../assets/youtube_light.png";
+  import Youtube_dark from "../assets/youtube_dark.png"
   import { MdDarkMode,MdLightMode } from "react-icons/md";
   import "../CSS/Layout.css"
-
   import { useTheme } from "../context/ThemeContext";
 
   function Layout() {
@@ -36,16 +35,27 @@
               <FaBars size={20} />
             </button>
             <Link className="navbar-brand ms-2" to="/">
-            {theme==="dark"?<img src={Youtube_light} alt="Logo" style={{ height: "2rem", width: "auto" }} />: <img src={Youtube__dark} alt="Logo" style={{ height: "2.5rem", width: "auto" }} />}
+            {theme==="dark"?<img src={Youtube_light} alt="Logo" style={{ height: "2rem", width: "auto" }} />: <img src={Youtube_dark} alt="Logo" style={{ height: "2.5rem", width: "auto" }} />}
               
             </Link>
           </div>
 
           {/* Center: Search Form */}
           <form className="d-flex flex-grow-1 justify-content-center mx-3" style={{ maxWidth: "25rem" }} onSubmit={handleSearch}>
-            <input className={`form-control rounded rounded-3 ${theme==="dark"?"":"bg-secondary"}`} type="search" placeholder="Search" aria-label="Search"  value={query}
-              onChange={(e) => setQuery(e.target.value)}/>
-            <button className="btn btn-secondary ms-2" type="submit">
+          <input
+            className="form-control rounded rounded-3"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            style={{
+              backgroundColor:"#cccccc", // Light theme: Grey (#f0f0f0), Dark theme: White (#ffffff)
+              color:  "#000" // Adjust text color if needed
+            }}
+          />
+
+            <button className={`btn ms-2`} type="submit" style={{backgroundColor:"#cccccc"}}>
               <IoSearch size={20} />
             </button>
           </form>
@@ -54,7 +64,6 @@
             <button className="btn btn-light" onClick={toggleTheme}>
               {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
             </button>
-
             <img
               src="https://shorturl.at/hqSen"
               alt="Profile"
@@ -62,8 +71,6 @@
               style={{ width: "40px", height: "40px", objectFit: "cover" }}
             />
           </div>
-
-          
         </div>
       </nav>
 
@@ -116,7 +123,8 @@
               marginLeft: window.innerWidth <= 610 ? (collapsed ? "60px" : "150px") : (collapsed ? "60px" : "200px"),
               transition: "margin-left 0.3s",
               padding: "20px",
-              maxWidth:"100vw"
+              maxWidth:"100vw",
+              overflowX:"hidden"
             }}>
           <Outlet />
         </div>
